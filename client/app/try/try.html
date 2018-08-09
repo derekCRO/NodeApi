@@ -1,0 +1,118 @@
+<div class="c-layout-page">
+    <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">Test our API search endpoint</h3>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a ui-sref="main">Home</a>
+                </li>
+                <li>/</li>
+                <li class="c-state_active">Test our API search endpoint</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BEGIN: PAGE CONTENT -->
+    <div class="c-content-box c-size-md c-bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="c-content-title-1 c-margin-b-60">
+                        <h3 class="c-center c-font-uppercase c-font-bold"> Test our API search endpoint </h3>
+                        <div class="c-line-center"></div>
+                        <p class="c-center c-font-uppercase c-font-17"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h2>Just enter a keyword or phrase and click Search.</h2>
+                <p class="c-margin-b-30"><small>Note:</small> By using this search test, you certify that you have read and have agreed to the <a href="#">API Terms of Use</a>.</p>
+                <div class="c-content-panel">
+                    <div class="c-body">
+                        <div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
+                            <h3 class="c-font-uppercase c-font-bold"> Parameters </h3>
+                            <div class="c-line-left c-theme-bg"></div>
+                        </div>
+                        <form class="form-horizontal" ng-submit="send()">
+                            <div class="form-group">
+                                <label for="phrase" class="col-md-2 col-xs-3 control-label">Phrase</label>
+                                <div class="col-md-8 col-xs-9">
+                                    <input type="text" class="form-control c-square c-theme" id="phrase" name="searchPhrase" ng-model="request.phrase">
+                                    <span class="help-block"> Enter a word or phrase to search for. If left blank, you will receive a selection of new content from our catalog. </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="type" class="col-md-2 col-xs-3 control-label">Type</label>
+                                <div class="col-md-3 col-xs-4">
+                                    <select class="form-control c-square c-theme" id="type" name="sortOrder" ng-model="request.apiType">
+                                        <option value="logo" value="logo">Logo</option>
+                                        <option value="lastname" value="lastname">lastname</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group c-margin-t-40">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <button class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" type="submit"> Search </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="c-content-panel">
+                    <div class="c-body">
+                        <div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
+                            <h3 class="c-font-uppercase c-font-bold"> Request </h3>
+                            <div class="c-line-left c-theme-bg"></div>
+                        </div>
+                        <pre><code>{{o_domain}}</code></pre>
+                    </div>
+                </div>
+                <div class="c-content-panel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="c-body col-md-6">
+                                <div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
+                                    <h3 class="c-font-uppercase c-font-bold"> Response </h3>
+                                    <div class="c-line-left c-theme-bg"></div>
+                                </div>
+                                <pre>{{response}}</pre>
+                            </div>
+                            <div class="c-body col-md-6">
+                                <div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
+                                    <h3 class="c-font-uppercase c-font-bold"> Formatted Response </h3>
+                                    <div class="c-line-left c-theme-bg"></div>
+                                </div>
+                                <div class="row response" ng-if="request.apiType == 'logo'">
+                                    <div class="col-md-6 text-center" ng-repeat="res in resp">
+                                        <div class="item">
+                                            <a href="{{res.url}}" target="_blank">
+                                                <img src="{{res.url}}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <pre ng-if="request.apiType == 'lastname'">{{response}}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-panel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="c-body col-md-6">
+                                <h4 style="height: 40px">Ready to test more endpoints? Register for an API key, and get started now.</h4>
+                                <a class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold btn-block c-margin-t-30" ui-sref="main.start">Get Started</a>
+                            </div>
+                            <div class="c-body col-md-6">
+                                <h4 style="height: 40px">Would you like access to additional content? Get in touch with us today to discuss licensing terms.</h4>
+								<a class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold btn-block c-margin-t-30" href="http://ournameshop.com/contactus">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: PAGE CONTENT -->
+</div>

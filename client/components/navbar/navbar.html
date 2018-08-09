@@ -1,0 +1,44 @@
+<header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="80">
+    <div class="c-navbar">
+        <div class="container">
+            <!-- BEGIN: BRAND -->
+            <div class="c-navbar-wrapper clearfix">
+                <div class="c-brand c-pull-left">
+                    <a ui-sref="main" class="c-logo">
+                        <span>Namedrop API</span>
+                    </a>
+                    <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                    </button>
+                </div>
+                <!-- END: BRAND -->
+                <!-- BEGIN: HOR NAV -->
+                <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
+                    <ul class="nav navbar-nav c-theme-nav">
+                        <li>
+                            <a class="c-link" ui-sref="main.docs">Docs</a>
+                        </li>
+                        <li class="hidden">
+                            <a class="c-link" ui-sref="forum">Forum</a>
+                        </li>
+                        <li ng-if="userEmail == undefined">
+                            <a class="c-link" ui-sref="main.auth">SignIn</a>
+                        </li>
+                        <li ng-if="userEmail != undefined">
+                            <a class="c-link" href="javascript:;" ng-click="logout()">LogOut</a>
+                        </li>
+                        <li ng-if="userEmail == undefined">
+                            <a class="c-link" ui-sref="main.start">Getting Start</a>
+                        </li>
+                        <li ng-if="userEmail != undefined">
+                            <a class="c-link" ui-sref="main.profile">Profile</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- END: HOR NAV -->
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,142 @@
+<div class="c-layout-page">
+    <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">Login | Register</h3>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a ui-sref="main">Home</a>
+                </li>
+                <li>/</li>
+                <li class="c-state_active">Login | Register</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BEGIN: PAGE CONTENT -->
+    <div class="c-content-box c-size-md c-bg-white">
+        <div class="container">
+            <div class="c-shop-login-register-1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default c-panel" ng-hide="forgotChecked">
+                            <div class="panel-body c-panel-body">
+                                <form class="c-form-login" ng-submit="login()">
+                                    <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+                                        <input class="form-control c-square c-theme input-lg" placeholder="Email" type="email" ng-model="login_user.email" required>
+                                        <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+                                    </div>
+                                    <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                                        <input class="form-control c-square c-theme input-lg" placeholder="Password" type="password" ng-model="login_user.password" required>
+                                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                                    </div>
+                                    <div class="row c-margin-t-30">
+                                        <div class="col-sm-6 col-xs-6">
+                                            <a href="javascript:;" class="btn btn-link" ng-click="showforgot();">Forgot password?</a>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6">
+                                            <button type="submit" ng-disabled="form.$invalid" class="pull-right btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Login</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="panel panel-default c-panel" ng-show="forgotChecked">
+                            <div class="panel-body c-panel-body">
+                                <div class="c-content-title-1">
+                                    <h3 class="c-left">
+                                        <i class="icon-key"></i> Forgot Password?</h3>
+                                    <div class="c-line-left c-theme-bg"></div>
+                                    <p>To recover your password please fill in your email address</p>
+                                </div>
+                                <form class="c-form-login" ng-submit="forgotPwd()">
+                                    <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+                                        <input class="form-control c-square c-theme input-lg" placeholder="Email" type="email" ng-model="email" required>
+                                        <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+                                    </div>
+                                    <div class="row c-margin-t-30">
+                                        <div class="col-sm-6 col-xs-6">
+                                            <a href="javascript:;" class="btn btn-link" ng-click="showforgot();">Back to Login?</a>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6">
+                                            <button type="submit" ng-disabled="form.$invalid" class="pull-right btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default c-panel">
+                            <div class="panel-body c-panel-body">
+                                <div class="c-content-title-1">
+                                    <h3 class="c-left">
+                                        <i class="icon-user"></i> Don't have an account yet?</h3>
+                                    <div class="c-line-left c-theme-bg"></div>
+                                    <p>Join us and enjoy using the APIs today.</p>
+                                </div>
+                                <div class="c-margin-fix">
+                                    <div class="c-checkbox c-toggle-hide" data-object-selector="c-form-register" data-animation-speed="600">
+                                        <input id="checkbox6-444" class="c-check" type="checkbox" ng-model="regChecked">
+                                        <label for="checkbox6-444">
+                                            <span class="inc"></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> Register Now!
+                                        </label>
+                                    </div>
+                                </div>
+                                <form class="c-form-register c-margin-t-20" ng-show="regChecked" ng-submit="register()">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6" ng-class="{ 'has-error': form.first_name.$dirty && form.first_name.$error.required }">
+                                                <label class="control-label">First Name</label>
+                                                <input class="form-control c-square c-theme" placeholder="First Name" type="text" name="first_name" ng-model="user.first_name" required>
+                                                <span ng-show="form.first_name.$dirty && form.first_name.$error.required" class="help-block">First name is required</span>
+                                            </div>
+                                            <div class="col-md-6" ng-class="{ 'has-error': form.last_name.$dirty && form.last_name.$error.required }">
+                                                <label class="control-label">Last Name</label>
+                                                <input class="form-control c-square c-theme" placeholder="Last Name" type="text" name="last_name" ng-model="user.last_name" required>
+                                                <span ng-show="form.last_name.$dirty && form.last_name.$error.required" class="help-block">Last name is required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required}">
+                                                <label class="control-label">Email Address</label>
+                                                <input class="form-control c-square c-theme" placeholder="Email Address" type="email" name="email" ng-model="user.email" required>
+                                                <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+                                            </div>
+                                            <div class="col-md-6" ng-class="{ 'has-error': form.phone.$dirty && form.phone.$error.required  }">
+                                                <label class="control-label">Phone</label>
+                                                <input class="form-control c-square c-theme" placeholder="Phone" type="text" name="phone" ng-model="user.phone">
+                                                <span ng-show="form.phone.$dirty && form.phone.$error.required" class="help-block">Phone is required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required  }">
+                                                <label class="control-label">Username</label>
+                                                <input class="form-control c-square c-theme" placeholder="Username" type="text" name="username" ng-model="user.username" required>
+                                                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+                                            </div>
+                                            <div class="col-md-6" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required}">
+                                                <label class="control-label">Password</label>
+                                                <input class="form-control c-square c-theme" placeholder="Password" type="password" name="password" ng-model="user.password" pattern=".{5,}" title="5 Characters Minimum" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group c-margin-t-30">
+                                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Register</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: PAGE CONTENT -->
+</div>

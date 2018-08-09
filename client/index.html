@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+    <title>Namedrop API Documentation</title>
+    <meta name="description" content="Namedrop developer document">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/jquery.ui-to-top/css/ui.totop.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN: BASE PLUGINS  -->
+    <link href="assets/plugins/revo-slider/css/settings.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/revo-slider/css/layers.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/revo-slider/css/navigation.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <!-- END: BASE PLUGINS -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="assets/base/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="assets/base/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="assets/base/css/default.css" rel="stylesheet" id="style_theme" type="text/css" />
+    <!-- END THEME STYLES -->
+</head>
+
+<body ng-app="namedropApp" class="c-layout-header-fixed c-layout-header-mobile-fixed">
+    <div ui-view="navbar"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery.ui-to-top/js/jquery.ui.totop.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/humanize-duration/humanize-duration.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-update-meta/dist/update-meta.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/jquery.ui-to-top/js/easing.js"></script>
+    <script src="bower_components/jquery.ui-to-top/js/jquery.ui.totop.min.js"></script>
+    <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/reveal-animate/wow.js" type="text/javascript"></script>
+    <script src="assets/base/js/reveal-animate.js" type="text/javascript"></script>
+    <!-- END: CORE PLUGINS -->
+    <!-- BEGIN: LAYOUT PLUGINS -->
+    <script src="assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.slideanims.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.layeranimation.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.navigation.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/revo-slider/js/extensions/revolution.extension.video.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+    <!-- END: LAYOUT PLUGINS -->
+    <!-- BEGIN: THEME SCRIPTS -->
+    <script src="assets/base/js/slider.js" type="text/javascript"></script>
+    <script src="assets/base/js/components.js" type="text/javascript"></script>
+    <script src="assets/base/js/app.js" type="text/javascript"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,client}) app/app.js -->
+    <script src="app/app.js"></script>
+    <!-- injector:js -->
+    <script src="app/docs/docs.controller.js"></script>
+    <script src="app/docs/docs.js"></script>
+    <script src="app/forum/forum.controller.js"></script>
+    <script src="app/forum/forum.js"></script>
+    <script src="app/gettingstart/gettingstart.controller.js"></script>
+    <script src="app/gettingstart/gettingstart.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/main/main.js"></script>
+    <script src="app/profile/profile.controller.js"></script>
+    <script src="app/profile/profile.js"></script>
+    <script src="app/try/try.controller.js"></script>
+    <script src="app/try/try.js"></script>
+    <script src="app/user/auth.controller.js"></script>
+    <script src="app/user/auth.js"></script>
+    <script src="components/footer/footer.controller.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/service/auth/auth.service.js"></script>
+    <script src="components/service/auth/user.serivce.js"></script>
+    <script src="components/service/try/try.service.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
+</body>
+
+</html>
